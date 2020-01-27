@@ -1,28 +1,18 @@
-<h1>List of all restaurants</h1>
+<h1>Hello, this is the list of my restaurants</h1>
 <ul>
-  <!-- itérer dans les restaurants -->
-  <% @restaurants.each do |restaurant| %>
+  <% @restaurants.each do |r| %>
     <li>
-      <!-- crée un lien qui va renvoyer vers la page de ton restau -->
-      <a href="/restaurants/<%=restaurant.id %>">
-        <%= restaurant.name %>
+      <a href="/restaurants/<%= r.id %>">
+        <%= r.name %>
       </a>
     </li>
   <% end %>
 </ul>
 
-<h2>Create a restaurant</h2>
 <form action="/restaurants" method="post">
-
-  <label for="name">Name</label>
-  <!-- on définit dans name="le nom de la variable d'instance" -->
-  <input type="text" name="name">
-
-  <label for="address">Address</label>
-  <input type="text" name="address">
-
-  <label for="rating">Rating</label>
-  <input type="integer" name="rating">
-
-  <input type="submit">
+    <label for="name">Name</label>
+    <input type="text" name="name">
+    <label for="address">Address</label>
+    <input type="text" name="address">
+    <input type="submit">
 </form>

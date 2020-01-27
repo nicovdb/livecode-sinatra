@@ -1,11 +1,11 @@
 require 'faker'
 
 10.times do
-  restaurant = Restaurant.new(
-    name: Faker::Beer.brand,
-    address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
-    rating: rand(0..10)
+  r = Restaurant.new(
+    name: Faker::Games::Pokemon.name,
+    address: Faker::Games::Pokemon.location,
+    rating: rand(0..5)
   )
-  restaurant.save!
-  puts "created #{restaurant.name}"
+  r.save!
+  puts "#{r.name}"
 end
